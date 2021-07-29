@@ -28,6 +28,7 @@ print(page_nr,"number of pages were found")
 l=[]
 base_url="http://www.pythonhow.com/real-estate/rock-springs-wy/LCWYROCKSPRINGS/t=0&s="
 for page in range(0,int(page_nr)*10,10):
+  # needs to be multiples of ten because subsequent page increases actually increment query string by 10, not 1
     print( )
     r=requests.get(base_url+str(page)+".html", headers=headers)
     c=r.content
